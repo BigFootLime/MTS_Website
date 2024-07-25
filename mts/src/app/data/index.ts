@@ -1,3 +1,4 @@
+import { BoltIcon, CalendarDaysIcon, UsersIcon } from '@heroicons/react/24/outline'
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
@@ -213,5 +214,29 @@ export const socialMedia = [
   {
     id: 3,
     img: "/link.svg",
+  },
+];
+
+export const primaryFeatures = [
+  {
+    name: 'Server monitoring',
+    description:
+      'Non quo aperiam repellendus quas est est. Eos aut dolore aut ut sit nesciunt. Ex tempora quia. Sit nobis consequatur dolores incidunt.',
+    href: '#',
+    icon: BoltIcon,
+  },
+  {
+    name: 'Collaborate',
+    description:
+      'Vero eum voluptatem aliquid nostrum voluptatem. Vitae esse natus. Earum nihil deserunt eos quasi cupiditate. A inventore et molestiae natus.',
+    href: '#',
+    icon: UsersIcon,
+  },
+  {
+    name: 'Task scheduling',
+    description:
+      'Et quod quaerat dolorem quaerat architecto aliquam accusantium. Ex adipisci et doloremque autem quia quam. Quis eos molestiae at iure impedit.',
+    href: '#',
+    icon: CalendarDaysIcon,
   },
 ];
