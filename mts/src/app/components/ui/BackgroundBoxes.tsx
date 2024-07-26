@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
-    const rows = new Array(150).fill(1);
+    // Reduce the number of rows to decrease the height
+    const rows = new Array(75).fill(1);
     const cols = new Array(100).fill(1);
     let colors = [
         "--sky-300",
@@ -35,7 +36,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
             {rows.map((_, i) => (
                 <motion.div
                     key={`row` + i}
-                    className="w-16 h-8  border-l  border-slate-700 relative"
+                    className="w-16 h-8 border-l border-slate-700 relative"
                 >
                     {cols.map((_, j) => (
                         <motion.div
@@ -47,7 +48,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
                                 transition: { duration: 2 },
                             }}
                             key={`col` + j}
-                            className="w-16 h-8  border-r border-t border-slate-700 relative"
+                            className="w-16 h-8 border-r border-t border-slate-700 relative"
                         >
                             {j % 2 === 0 && i % 2 === 0 ? (
                                 <svg

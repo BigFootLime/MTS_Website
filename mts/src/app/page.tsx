@@ -8,6 +8,7 @@ import { FloatingNav } from "@/app/components/ui/FloatingNav";
 import { Deployment } from "./components/Deployment";
 import { Server } from "./components/Server";
 import { Boxes, BoxesCore } from "./components/ui/BackgroundBoxes";
+import { HeroHighlight } from "./components/ui/GeminiEffect";
 
 const Home = () => {
   return (
@@ -17,13 +18,11 @@ const Home = () => {
         <Hero />
         <Deployment primaryFeatures={primaryFeatures} textDeployment={textDeployment} />
         <Server secondaryFeatures={secondaryFeatures} textDeployment2={textDeployment2} />
-        <div className="relative">
-          <Boxes />
-        </div>
+
         {/* <Grid /> */}
       </div>
     </main>
   );
 };
 
-export default Home;
+export default Home; 

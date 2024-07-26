@@ -1,3 +1,4 @@
+import { FlipWords } from "./ui/FlipWords";
 
 export const Server = ({
     secondaryFeatures,
@@ -19,14 +20,18 @@ export const Server = ({
     }[];
     className?: string;
 }) => {
+    const words = ["Serveur?", "Problème !"];
     return (
-        <div className="mt-32 sm:mt-56">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="relative h-screen w-full dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black/[0.2]">
+            <div className="absolute inset-0 flex items-center justify-center">
+                <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+            </div>
+            <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-32 sm:mt-56">
                 <div className="mx-auto max-w-2xl sm:text-center">
                     {textDeployment2.map((text) => (
                         <div key={1}>
                             <h2 className="text-base font-semibold leading-7 text-indigo-400">{text.title}</h2>
-                            <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">{text.subTitle}</p>
+                            <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Pas de <FlipWords words={words} /></p>
                             <p className="mt-6 text-lg leading-8 text-gray-300">
                                 {text.description}
                             </p>
@@ -62,5 +67,6 @@ export const Server = ({
                 </dl>
             </div>
         </div>
+
     )
 }
