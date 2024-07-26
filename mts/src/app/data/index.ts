@@ -1,4 +1,4 @@
-import { BoltIcon, CalendarDaysIcon, UsersIcon } from '@heroicons/react/24/outline'
+import { ArrowPathIcon, BoltIcon, CalendarDaysIcon, CloudArrowUpIcon, Cog6ToothIcon, FingerPrintIcon, LockClosedIcon, ServerIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
@@ -219,24 +219,71 @@ export const socialMedia = [
 
 export const primaryFeatures = [
   {
-    name: 'Server monitoring',
-    description:
-      'Non quo aperiam repellendus quas est est. Eos aut dolore aut ut sit nesciunt. Ex tempora quia. Sit nobis consequatur dolores incidunt.',
-    href: '#',
-    icon: BoltIcon,
+    name: "Surveillance du serveur",
+    description: "Assurer un fonctionnement optimal avec une surveillance continue et proactive des serveurs. Détecter et résoudre les problèmes avant qu'ils n'affectent les utilisateurs.",
+    href: "#",
+    icon: BoltIcon
   },
   {
-    name: 'Collaborate',
-    description:
-      'Vero eum voluptatem aliquid nostrum voluptatem. Vitae esse natus. Earum nihil deserunt eos quasi cupiditate. A inventore et molestiae natus.',
-    href: '#',
-    icon: UsersIcon,
+    name: "Sécurité",
+    description: "Protéger les applications et données avec des solutions de sécurité robustes. Identifier les vulnérabilités, mettre en œuvre des protocoles de sécurité avancés et maintenir un environnement sécurisé.",
+    href: "#",
+    icon: ShieldCheckIcon
   },
   {
-    name: 'Task scheduling',
+    name: "Planification des tâches",
+    description: "Optimiser le flux de travail avec une planification efficace des tâches. Automatiser les processus, gérer les dépendances et assurer la ponctualité des livrables.",
+    href: "#",
+    icon: CalendarDaysIcon
+  },
+]
+export const textDeployment = [
+  {
+    title: 'Déployez plus rapidement',
+    subTitle: 'Votre partenaire de confiance pour un déploiement d\'application sans faille.',
     description:
-      'Et quod quaerat dolorem quaerat architecto aliquam accusantium. Ex adipisci et doloremque autem quia quam. Quis eos molestiae at iure impedit.',
+      'Un déploiement rapide et efficace des applications est essentiel pour le succès. Avec une expertise éprouvée, un déploiement sans accrocs est assuré, permettant de se concentrer sur l\'innovation et la croissance. Des solutions sur mesure sont proposées, adaptées aux besoins spécifiques, garantissant une transition fluide et sécurisée vers votre but.',
     href: '#',
-    icon: CalendarDaysIcon,
+  },
+];
+export const secondaryFeatures = [
+  {
+    name: 'Push to deploy.',
+    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
+    icon: CloudArrowUpIcon,
+  },
+  {
+    name: 'SSL certificates.',
+    description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
+    icon: LockClosedIcon,
+  },
+  {
+    name: 'Simple queues.',
+    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.',
+    icon: ArrowPathIcon,
+  },
+  {
+    name: 'Advanced security.',
+    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
+    icon: FingerPrintIcon,
+  },
+  {
+    name: 'Powerful API.',
+    description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
+    icon: Cog6ToothIcon,
+  },
+  {
+    name: 'Database backups.',
+    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. ',
+    icon: ServerIcon,
+  },
+];
+export const textDeployment2 = [
+  {
+    title: 'Tout ce dont vous avez besoin',
+    subTitle: 'Pas de serveur? Pas de problème.',
+    description:
+      'dnqifngqid',
+    href: '#',
   },
 ];

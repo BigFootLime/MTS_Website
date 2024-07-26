@@ -1,10 +1,13 @@
 "use client";
 
-import { navItems } from "@/app/data";
+import { navItems, primaryFeatures, textDeployment, secondaryFeatures, textDeployment2 } from "@/app/data";
 
 import Hero from "@/app/components/Hero";
 import Grid from "@/app/components/Grid";
 import { FloatingNav } from "@/app/components/ui/FloatingNav";
+import { Deployment } from "./components/Deployment";
+import { Server } from "./components/Server";
+import { Boxes, BoxesCore } from "./components/ui/BackgroundBoxes";
 
 const Home = () => {
   return (
@@ -12,7 +15,12 @@ const Home = () => {
       <div className="max-w-7xl w-full">
         <FloatingNav navItems={navItems} />
         <Hero />
-        <Grid />
+        <Deployment primaryFeatures={primaryFeatures} textDeployment={textDeployment} />
+        <Server secondaryFeatures={secondaryFeatures} textDeployment2={textDeployment2} />
+        <div className="relative">
+          <Boxes />
+        </div>
+        {/* <Grid /> */}
       </div>
     </main>
   );
