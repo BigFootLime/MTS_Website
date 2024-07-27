@@ -1,6 +1,12 @@
 "use client";
 
-import { navItems, primaryFeatures, textDeployment, secondaryFeatures, textDeployment2 } from "@/app/data";
+import {
+  navItems,
+  primaryFeatures,
+  textDeployment,
+  secondaryFeatures,
+  textDeployment2,
+} from "@/app/data";
 
 import Hero from "@/app/components/Hero";
 import Grid from "@/app/components/Grid";
@@ -9,6 +15,7 @@ import { Deployment } from "./components/Deployment";
 import { Server } from "./components/Server";
 import { Boxes, BoxesCore } from "./components/ui/BackgroundBoxes";
 import { HeroHighlight } from "./components/ui/GeminiEffect";
+import { LampDemo } from "./components/ui/Lamp";
 
 const Home = () => {
   return (
@@ -16,8 +23,15 @@ const Home = () => {
       <div className="max-w-7xl w-full">
         <FloatingNav navItems={navItems} />
         <Hero />
-        <Deployment primaryFeatures={primaryFeatures} textDeployment={textDeployment} />
-        <Server secondaryFeatures={secondaryFeatures} textDeployment2={textDeployment2} />
+        <Deployment
+          primaryFeatures={primaryFeatures}
+          textDeployment={textDeployment}
+        />
+        <LampDemo />
+        <Server
+          secondaryFeatures={secondaryFeatures}
+          textDeployment2={textDeployment2}
+        />
 
         {/* <Grid /> */}
       </div>
@@ -25,4 +39,4 @@ const Home = () => {
   );
 };
 
-export default Home; 
+export default Home;
