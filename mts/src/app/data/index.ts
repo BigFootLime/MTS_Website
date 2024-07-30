@@ -282,8 +282,9 @@ export const textDeployment2 = [
   {
     title: 'Tout ce dont vous avez besoin',
     subTitle: 'Pas de serveur? Pas de problème.',
-    description:
-      'dnqifngqid',
+    description: 'Vous rêvez d\'un site web sans vous soucier de l\'hébergement ? Laissez-moi faire le travail ! Je crée et héberge votre site web, pour que vous puissiez vous concentrer sur l\'essentiel. Profitez d\'une expertise et d\'un service clé en main, sans tracas. Contactez-moi dès aujourd\'hui pour transformer votre présence en ligne !',
     href: '#',
+    lampcolor: 'indigo-500',
+    lamplight: 'indigo-400',
   },
 ];

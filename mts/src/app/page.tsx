@@ -15,7 +15,8 @@ import { Deployment } from "./components/Deployment";
 import { Server } from "./components/Server";
 import { Boxes, BoxesCore } from "./components/ui/BackgroundBoxes";
 import { HeroHighlight } from "./components/ui/GeminiEffect";
-import { LampDemo } from "./components/ui/Lamp";
+import { LampContainer, LampDemo } from "./components/ui/Lamp";
+import { CanvasRevealEffectDeployment } from "./components/Offers-Deployment";
 
 const Home = () => {
   return (
@@ -27,12 +28,8 @@ const Home = () => {
           primaryFeatures={primaryFeatures}
           textDeployment={textDeployment}
         />
-        <LampDemo />
-        <Server
-          secondaryFeatures={secondaryFeatures}
-          textDeployment2={textDeployment2}
-        />
-
+        <LampDemo textDeployment2={textDeployment2} />
+        <CanvasRevealEffectDeployment />
         {/* <Grid /> */}
       </div>
     </main>
