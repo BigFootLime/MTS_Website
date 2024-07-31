@@ -288,3 +288,59 @@ export const textDeployment2 = [
     lamplight: 'indigo-400',
   },
 ];
+
+export const frequencies = [
+  {
+    value: 'par Mois',
+    label: 'par Mois',
+  },
+  {
+    value: 'par Année',
+    label: 'par Année',
+  }
+]
+
+export const tiers = [
+  {
+    name: "Basique",
+    id: "tier-basique",
+    href: "#",
+    featured: false,
+    description: "Tous vos besoins essentiels en matière de serveur, pris en charge. À partir de.",
+    price: { "par Mois": "50€", "par Année": "420€" },
+    mainFeatures: [
+      "Installation et configuration d'un VPS KVM2",
+      "Maintenance mensuelle de base",
+      "Surveillance limitée (hebdomadaire)",
+      "Support technique limité (1 heure par mois)"
+    ]
+  },
+  {
+    name: "Business",
+    id: "tier-business",
+    href: "#",
+    featured: true,
+    description: "Les meilleurs services de serveur pour votre entreprise florissante.",
+    price: { "par Mois": "120€", "par Année": "1080€" },
+    mainFeatures: [
+      "Installation et configuration d'un VPS KVM8",
+      "Maintenance mensuelle complète",
+      "Surveillance quotidienne",
+      "Support technique étendu (5 heures par mois)"
+    ]
+  },
+  {
+    name: "Professionel",
+    id: "tier-professionel",
+    href: "#",
+    featured: false,
+    description: "Des fonctionnalités pratiques pour faire passer votre entreprise au niveau supérieur.",
+    price: { "par Mois": "70€", "par Année": "620€" },
+    mainFeatures: [
+      "Installation et configuration d'un VPS KVM4",
+      "Maintenance mensuelle avancée",
+      "Surveillance avancée (bi-hebdomadaire)",
+      "Support technique modéré (3 heures par mois)"
+    ]
+  }
+]

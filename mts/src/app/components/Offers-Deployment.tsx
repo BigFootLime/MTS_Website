@@ -1,163 +1,163 @@
-"use client";
-import React from "react";
-import { BackgroundGradient } from "./ui/background-gradient";
-import Image from "next/image";
-import { Radio, RadioGroup } from '@headlessui/react'
-import { CheckIcon } from '@heroicons/react/20/solid'
+'use client'
 
-export function CanvasRevealEffectDeployment() {
+import { useState } from 'react'
+import { Radio, RadioGroup } from '@headlessui/react'
+import { CheckIcon, XMarkIcon } from '@heroicons/react/20/solid'
+
+function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+}
+
+export default function CanvasRevealEffectDeployment({
+    tiers, frequencies
+}: {
+    tiers: {
+        name: string;
+        id: string;
+        href: string;
+        featured: string;
+        price: { [key: string]: string };
+        mainFeatures: string[];
+
+    }[];
+    frequencies: {
+        value: string;
+        label: string;
+    }[];
+    className?: string;
+}) {
+    const [frequency, setFrequency] = useState(frequencies[0])
+
     return (
-        <div className="flex lg:flex-row gap-5 justify-center flex-col">
-            <div className="bg-gray-900 py-24 sm:py-32">
+        <div className="isolate overflow-hidden">
+            <div className="flow-root pb-16 sm:pt-8 lg:pb-0">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="mx-auto max-w-4xl text-center">
-                        <h2 className="text-base font-semibold leading-7 text-indigo-400">Pricing</h2>
-                        <p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
-                            Pricing plans for teams of&nbsp;all&nbsp;sizes
+                    <div className="relative z-10">
+                        <h2 className="mx-auto max-w-4xl text-center text-5xl font-bold tracking-tight text-white">
+                            Nos offres de mise en place Serveur
+                        </h2>
+                        <p className="mx-auto mt-4 max-w-2xl text-center text-lg leading-8 text-white/60">
+                            Voici nos offres d'installation, surveillance, et support pour votre serveur.
                         </p>
+                        <div className="mt-16 flex justify-center">
+                            <fieldset aria-label="Payment frequency">
+                                <RadioGroup
+                                    value={frequency}
+                                    onChange={setFrequency}
+                                    className="grid grid-cols-2 gap-x-1 rounded-full bg-white/5 p-1 text-center text-xs font-semibold leading-5 text-white"
+                                >
+                                    {frequencies.map((option) => (
+                                        <Radio
+                                            key={option.value}
+                                            value={option}
+                                            className="cursor-pointer rounded-full px-2.5 py-1 data-[checked]:bg-indigo-500"
+                                        >
+                                            {option.label}
+                                        </Radio>
+                                    ))}
+                                </RadioGroup>
+                            </fieldset>
+                        </div>
                     </div>
-                    <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-300">
-                        Choose an affordable plan that’s packed with the best features for engaging your audience, creating customer
-                        loyalty, and driving sales.
-                    </p>
-                    <div className="mt-16 flex justify-center">
-                        <fieldset aria-label="Payment frequency">
-                            <RadioGroup
-                                value={frequency}
-                                onChange={setFrequency}
-                                className="grid grid-cols-2 gap-x-1 rounded-full bg-white/5 p-1 text-center text-xs font-semibold leading-5 text-white"
-                            >
-                                {frequencies.map((option) => (
-                                    <Radio
-                                        key={option.value}
-                                        value={option}
-                                        className="cursor-pointer rounded-full px-2.5 py-1 data-[checked]:bg-indigo-500"
-                                    >
-                                        {option.label}
-                                    </Radio>
-                                ))}
-                            </RadioGroup>
-                        </fieldset>
-                    </div>
-                    <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                    <div className="relative mx-auto mt-10 grid max-w-md grid-cols-1 gap-y-8 lg:mx-0 lg:-mb-14 lg:max-w-none lg:grid-cols-3">
+                        <svg
+                            viewBox="0 0 1208 1024"
+                            aria-hidden="true"
+                            className="absolute -bottom-48 left-1/2 h-[64rem] -translate-x-1/2 translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] lg:-top-48 lg:bottom-auto lg:translate-y-0"
+                        >
+                            <ellipse cx={604} cy={512} rx={604} ry={512} fill="url(#d25c25d4-6d43-4bf9-b9ac-1842a30a4867)" />
+                            <defs>
+                                <radialGradient id="d25c25d4-6d43-4bf9-b9ac-1842a30a4867">
+                                    <stop stopColor="#7775D6" />
+                                    <stop offset={1} stopColor="#E935C1" />
+                                </radialGradient>
+                            </defs>
+                        </svg>
+                        <div
+                            aria-hidden="true"
+                            className="hidden lg:absolute lg:inset-x-px lg:bottom-0 lg:top-4 lg:block lg:rounded-t-2xl lg:bg-gray-800/80 lg:ring-1 lg:ring-white/10"
+                        />
                         {tiers.map((tier) => (
                             <div
                                 key={tier.id}
                                 className={classNames(
-                                    tier.mostPopular ? 'bg-white/5 ring-2 ring-indigo-500' : 'ring-1 ring-white/10',
-                                    'rounded-3xl p-8 xl:p-10',
+                                    tier.featured
+                                        ? 'z-10 bg-white shadow-xl ring-1 ring-gray-900/10'
+                                        : 'bg-gray-800/80 ring-1 ring-white/10 lg:bg-transparent lg:pb-14 lg:ring-0',
+                                    'relative rounded-2xl',
                                 )}
                             >
-                                <div className="flex items-center justify-between gap-x-4">
-                                    <h3 id={tier.id} className="text-lg font-semibold leading-8 text-white">
+                                <div className="p-8 lg:pt-12 xl:p-10 xl:pt-14">
+                                    <h3
+                                        id={tier.id}
+                                        className={classNames(
+                                            tier.featured ? 'text-gray-900' : 'text-white',
+                                            'text-sm font-semibold leading-6',
+                                        )}
+                                    >
                                         {tier.name}
                                     </h3>
-                                    {tier.mostPopular ? (
-                                        <p className="rounded-full bg-indigo-500 px-2.5 py-1 text-xs font-semibold leading-5 text-white">
-                                            Most popular
-                                        </p>
-                                    ) : null}
+                                    <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between lg:flex-col lg:items-stretch">
+                                        <div className="mt-2 flex items-center gap-x-4">
+                                            <p
+                                                className={classNames(
+                                                    tier.featured ? 'text-gray-900' : 'text-white',
+                                                    'text-4xl font-bold tracking-tight',
+                                                )}
+                                            >
+                                                {tier.price[frequency.value]}
+                                            </p>
+                                            <div className="text-sm leading-5">
+                                                <p className={tier.featured ? 'text-gray-900' : 'text-white'}>EUR</p>
+                                                <p
+                                                    className={tier.featured ? 'text-gray-500' : 'text-gray-400'}
+                                                >{`Facturé ${frequency.value}`}</p>
+                                            </div>
+                                        </div>
+                                        <a
+                                            href={tier.href}
+                                            aria-describedby={tier.id}
+                                            className={classNames(
+                                                tier.featured
+                                                    ? 'bg-indigo-600 shadow-sm hover:bg-indigo-500 focus-visible:outline-indigo-600'
+                                                    : 'bg-white/10 hover:bg-white/20 focus-visible:outline-white',
+                                                'rounded-md px-3 py-2 text-center text-sm font-semibold leading-6 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
+                                            )}
+                                        >
+                                            Choisir ce plan
+                                        </a>
+                                    </div>
+                                    <div className="mt-8 flow-root sm:mt-10">
+                                        <ul
+                                            role="list"
+                                            className={classNames(
+                                                tier.featured
+                                                    ? 'divide-gray-900/5 border-gray-900/5 text-gray-600'
+                                                    : 'divide-white/5 border-white/5 text-white',
+                                                '-my-2 divide-y border-t text-sm leading-6 lg:border-t-0',
+                                            )}
+                                        >
+                                            {tier.mainFeatures.map((mainFeature) => (
+                                                <li key={mainFeature} className="flex gap-x-3 py-2">
+                                                    <CheckIcon
+                                                        aria-hidden="true"
+                                                        className={classNames(
+                                                            tier.featured ? 'text-indigo-600' : 'text-gray-500',
+                                                            'h-6 w-5 flex-none',
+                                                        )}
+                                                    />
+                                                    {mainFeature}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
                                 </div>
-                                <p className="mt-4 text-sm leading-6 text-gray-300">{tier.description}</p>
-                                <p className="mt-6 flex items-baseline gap-x-1">
-                                    <span className="text-4xl font-bold tracking-tight text-white">{tier.price[frequency.value]}</span>
-                                    <span className="text-sm font-semibold leading-6 text-gray-300">{frequency.priceSuffix}</span>
-                                </p>
-                                <a
-                                    href={tier.href}
-                                    aria-describedby={tier.id}
-                                    className={classNames(
-                                        tier.mostPopular
-                                            ? 'bg-indigo-500 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-indigo-500'
-                                            : 'bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white',
-                                        'mt-6 block rounded-md px-3 py-2 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
-                                    )}
-                                >
-                                    Buy plan
-                                </a>
-                                <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10">
-                                    {tier.features.map((feature) => (
-                                        <li key={feature} className="flex gap-x-3">
-                                            <CheckIcon aria-hidden="true" className="h-6 w-5 flex-none text-white" />
-                                            {feature}
-                                        </li>
-                                    ))}
-                                </ul>
                             </div>
                         ))}
                     </div>
                 </div>
             </div>
-            <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900" containerClassName="" >
-
-                <h1 className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
-                    A partir de 100$
-                </h1>
-                <p className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
-                    Air Jordan 4 Retro Reimagined
-                </p>
-
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                    The Air Jordan 4 Retro Reimagined Bred will release on Saturday,
-                    February 17, 2024. Your best opportunity to get these right now is by
-                    entering raffles and waiting for the official releases.
-                </p>
-                <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
-                    <span>Buy now </span>
-                    <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
-                        $100
-                    </span>
-                </button>
-            </BackgroundGradient>
-            <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-black">
-                <Image
-                    src={`/jordans.webp`}
-                    alt="jordans"
-                    height="400"
-                    width="400"
-                    className="object-contain"
-                />
-                <p className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
-                    Air Jordan 4 Retro Reimagined
-                </p>
-
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                    The Air Jordan 4 Retro Reimagined Bred will release on Saturday,
-                    February 17, 2024. Your best opportunity to get these right now is by
-                    entering raffles and waiting for the official releases.
-                </p>
-                <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
-                    <span>Buy now </span>
-                    <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
-                        $100
-                    </span>
-                </button>
-            </BackgroundGradient>
-            <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-indigo-900">
-                <Image
-                    src={`/jordans.webp`}
-                    alt="jordans"
-                    height="400"
-                    width="400"
-                    className="object-contain"
-                />
-                <p className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
-                    Air Jordan 4 Retro Reimagined
-                </p>
-
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                    The Air Jordan 4 Retro Reimagined Bred will release on Saturday,
-                    February 17, 2024. Your best opportunity to get these right now is by
-                    entering raffles and waiting for the official releases.
-                </p>
-                <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-indigo-800">
-                    <span>Buy now </span>
-                    <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
-                        $100
-                    </span>
-                </button>
-            </BackgroundGradient>
 
         </div>
-    );
+    )
 }

@@ -6,6 +6,8 @@ import {
   textDeployment,
   secondaryFeatures,
   textDeployment2,
+  tiers,
+  frequencies,
 } from "@/app/data";
 
 import Hero from "@/app/components/Hero";
@@ -16,7 +18,7 @@ import { Server } from "./components/Server";
 import { Boxes, BoxesCore } from "./components/ui/BackgroundBoxes";
 import { HeroHighlight } from "./components/ui/GeminiEffect";
 import { LampContainer, LampDemo } from "./components/ui/Lamp";
-import { CanvasRevealEffectDeployment } from "./components/Offers-Deployment";
+import CanvasRevealEffectDeployment from "./components/Offers-Deployment";
 
 const Home = () => {
   return (
@@ -29,7 +31,7 @@ const Home = () => {
           textDeployment={textDeployment}
         />
         <LampDemo textDeployment2={textDeployment2} />
-        <CanvasRevealEffectDeployment />
+        <CanvasRevealEffectDeployment tiers={tiers} frequencies={frequencies} />
         {/* <Grid /> */}
       </div>
     </main>
